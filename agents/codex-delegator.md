@@ -20,26 +20,28 @@ whenToUse: >
   ambiguous.
 
 
-  Example 1:
+  <example>
     User: "use codex to add types to all the files in lib/utils/"
     Action: Glob for files, chunk by file, dispatch Codex with typing instructions.
+  </example>
 
-
-  Example 2:
+  <example>
     User: "delegate the JSDoc additions to codex for the components folder"
     Action: Identify exported functions/components, dispatch Codex to add JSDoc.
+  </example>
 
-
-  Example 3:
+  <example>
     User: "have codex handle the boilerplate for the new CRUD endpoints"
     Action: Break into per-endpoint tasks, dispatch Codex with template pattern.
+  </example>
 tools:
   - Bash
   - Read
   - Write
   - Glob
   - Grep
-color: orange
+color: yellow
+model: inherit
 ---
 
 # Codex Delegator Agent
@@ -88,9 +90,9 @@ Select the appropriate reasoning effort for the task complexity:
 
 | Task Type | Reasoning Level |
 |---|---|
-| Simple find-and-replace, renaming | `--reasoning-effort low` |
-| Adding types, JSDoc, basic boilerplate | `--reasoning-effort medium` |
-| Pattern application requiring file understanding | `--reasoning-effort high` |
+| Simple find-and-replace, renaming | `-c model_reasoning_effort="low"` |
+| Adding types, JSDoc, basic boilerplate | `-c model_reasoning_effort="medium"` |
+| Pattern application requiring file understanding | `-c model_reasoning_effort="high"` |
 
 Default to `medium` if uncertain.
 
@@ -102,7 +104,7 @@ Dispatch each chunk using the Codex CLI in full-auto ephemeral mode:
 codex exec \
   --full-auto \
   --ephemeral \
-  --reasoning-effort <level> \
+  -c model_reasoning_effort="<level>" \
   "<clear, specific instruction for this chunk>"
 ```
 
