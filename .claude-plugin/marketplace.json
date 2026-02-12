@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "codex-agent",
+  "description": "Delegate coding tasks to OpenAI Codex CLI as a fast build agent",
+  "owner": {
+    "name": "Dennison Bertram"
+  },
+  "plugins": [
+    {
+      "name": "codex-agent",
+      "description": "Delegate coding tasks to OpenAI Codex CLI as a fast build agent. Supports non-interactive execution with configurable reasoning levels and parallel task dispatch.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Dennison Bertram"
+      },
+      "source": "./plugins/codex-agent",
+      "category": "development",
+      "homepage": "https://github.com/dennisonbertram/codex-agent",
+      "tags": ["codex", "openai", "delegation", "build-agent"]
+    }
+  ]
+}

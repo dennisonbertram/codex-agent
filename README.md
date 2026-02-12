@@ -15,25 +15,12 @@ A Claude Code plugin that delegates coding tasks to OpenAI's Codex CLI as a fast
 
 ## Installation
 
-### Via Claude Code CLI
-
 ```bash
-claude plugin add /path/to/codex-agent
-```
+# Add the marketplace
+claude plugin marketplace add dennisonbertram/codex-agent
 
-### Manual
-
-Clone this repo and point Claude Code at it:
-
-```bash
-git clone https://github.com/DennisonBertworram/codex-agent-plugin.git
-claude --plugin-dir ./codex-agent-plugin
-```
-
-Or symlink into your plugins directory:
-
-```bash
-ln -s /path/to/codex-agent ~/.claude/plugins/codex-agent
+# Install the plugin
+claude plugin install codex-agent
 ```
 
 ## Usage
@@ -71,15 +58,20 @@ Control how much Codex "thinks" before acting:
 
 ```
 codex-agent/
-├── plugin.json              # Plugin manifest
-├── README.md                # This file
-├── skills/
+├── .claude-plugin/
+│   └── marketplace.json         # Marketplace manifest
+├── README.md                    # This file
+├── plugins/
 │   └── codex-agent/
-│       └── skill.md         # Codex build agent knowledge
-├── commands/
-│   └── codex.md             # /codex slash command
-└── agents/
-    └── codex-delegator.md   # Autonomous delegation agent
+│       ├── .claude-plugin/
+│       │   └── plugin.json      # Plugin manifest
+│       ├── skills/
+│       │   └── codex-agent/
+│       │       └── SKILL.md     # Codex build agent knowledge
+│       ├── commands/
+│       │   └── codex.md         # /codex slash command
+│       └── agents/
+│           └── codex-delegator.md  # Autonomous delegation agent
 ```
 
 ## License
