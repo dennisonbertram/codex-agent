@@ -1,0 +1,8 @@
+{
+  "name": "codex-agent",
+  "version": "0.1.0",
+  "description": "Delegate coding tasks to OpenAI Codex CLI as a fast build agent. Supports non-interactive execution with configurable reasoning levels and parallel task dispatch.",
+  "author": {
+    "name": "Dennison Bertram"
+  }
+}
